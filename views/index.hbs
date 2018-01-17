@@ -1,0 +1,25 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+<form action="">
+  Search for Artist: <input type="text" name="artist" id="artist"><br>
+  <input type="submit" value="Submit">
+</form>
+
+<div class="artistName"></div>
+<div class="results"></div>
+
+<div id="panel">
+    <input id="city_country" type="textbox" value="Dublin, Ireland">
+    <input type="button" value="Geocode" onclick="codeAddress()">
+</div>  
+<div id="mapCanvas"></div>
+<div id="infoPanel">
+  <b>Marker status:</b>
+  <div id="markerStatus"><i>Click and drag the marker.</i></div>
+  <b>Current position:</b>
+  <div id="info"></div>
+  <b>Fetched ISO-3166-2 code from Google Maps API:</b>
+  <div id="address"></div>
+</div>
+
+
