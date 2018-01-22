@@ -43,7 +43,9 @@ router.get('/', function(req, res, next) {
 
 router.post('/tracks', function(req, res, next) {
 // Get tracks in an album
-spotifyApi.searchTracks('artist:Love')
+console.log(req.body);
+console.log("penguins");
+spotifyApi.searchTracks(`artist:${req.body.artist}`)
   .then(function(data) {
   	console.log('hellotest');
     console.log('Search tracks by "Love" in the artist name', data.body.tracks.items[0]);
@@ -56,13 +58,13 @@ spotifyApi.searchTracks('artist:Love')
 //Retrieve Featured Playlists
 router.post('/location', function(req, res, next) {
 	console.log(req.body);
-	spotifyApi.getFeaturedPlaylists({ limit : 3, offset: 1, country: req.body.countryCode, timestamp:'2014-10-23T09:00:00' })
+	spotifyApi.getNewReleases({ limit : 20, offset: 1, country: req.body.countryCode, timestamp:'2014-10-23T09:00:00' })
 		.then(function(data) {
 			console.log('artist in location');
-			//console.log(data.body);
+			console.log(data.body);
 			//console.log(data.body.playlists.items[0]);
-			console.log(data.body.playlists.items[0].name);
-			console.log(data.body.playlists.items[0].id);
+			//console.log(data.body.playlists.items[0].name);
+			//console.log(data.body.playlists.items[0].id);
 			return res.status(200).json({featurePlaylist:data.body});
 		}, function(err) {
 			console.log("Something went wrong!", err);

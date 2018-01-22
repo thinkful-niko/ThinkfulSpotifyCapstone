@@ -95,5 +95,22 @@ function updateMarkerAddress(str) {
   $.post("/location", {countryCode: str}, function(result){
     document.getElementById('address').innerHTML = str;
     console.log(result);
+    loopThroughPlaylist(result.featurePlaylist.albums.items);
+    //console.log(result.featurePlaylist.albums.items[0].href);
+    //let audioObject = new Audio(result.featurePlaylist.albums.items[0].href); //create a new audio object using the data returned from Spotify.com
+    //audioObject.play(); //play the song!!!
   })
+}
+
+function loopThroughPlaylist(data) {
+  let songHTML='';
+  for(let i = 0; i < data.length; i++) {
+    //console.log(data[i].uri);
+    songHTML += `<div data-artist-name='${data[i].artists[0].name}' data-album-id='${data[i].id}' class='album'>albumName: ${data[i].name} artistName: ${data[i].artists[0].name}</div><br>`
+
+  }
+  $('.results').html(songHTML);
+
+  //let audioObject = new Audio(data.tracks.items[0].preview_url); //create a new audio object using the data returned from Spotify.com
+  //        audioObject.play(); //play the song!!!
 }

@@ -1,34 +1,24 @@
-   $('form').submit(function(e){
-        e.preventDefault();
-        //console.log($('#artist').val());
-        let artist = $('#artist').val();
-		$.post("/artist", {artist: artist}, function(result){
-        	console.log(result);
-        	//S$('.results').html(result.data);
-        	loopThroughVid(result.data);
-    	});        
-    });
-
-function loopThroughVid(data) {
-	let songHTML='';
-	for(let i = 0; i < data.length; i++) {
-		//console.log(data[i].uri);
-		songHTML += `<div data-album-id='${data[i].id}' class='album'>${data[i].name}</div><br>`
-
-	}
-	$('.results').html(songHTML);
-
-	//let audioObject = new Audio(data.tracks.items[0].preview_url); //create a new audio object using the data returned from Spotify.com
-	//				audioObject.play(); //play the song!!!
-}
+var audioObject = new Audio();
 
 $('body').on('click', '.album', function (e) { 
-	console.log(e);
-	$.post("/tracks", {e: e}, function(result){
+	console.log(this);
+	console.log($(this).data('album-id'))
+
+	let album = $(this).data('album-id')
+	let artist = $(this).data('artist-name')
+
+	let data = {
+	    album:album,
+	     artist: artist
+	}
+	console.log(data);
+
+	$.post("/tracks", data, function(result){
         	console.log(result);
         	//S$('.results').html(result.data);
         	//loopThroughVid(result.data);
-        	let audioObject = new Audio(result.data[0].preview_url); //create a new audio object using the data returned from Spotify.com
+        	audioObject.pause();
+        	audioObject = new Audio(result.data[0].preview_url); //create a new audio object using the data returned from Spotify.com
 			audioObject.play(); //play the song!!!
     	});   
     });
