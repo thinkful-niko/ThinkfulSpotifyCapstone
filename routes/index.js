@@ -58,7 +58,7 @@ spotifyApi.searchTracks(`artist:${req.body.artist}`)
 //Retrieve Featured Playlists
 router.post('/location', function(req, res, next) {
 	console.log(req.body);
-	spotifyApi.getNewReleases({ limit : 20, offset: 1, country: req.body.countryCode, timestamp:'2014-10-23T09:00:00' })
+	spotifyApi.getNewReleases({ limit : 20, offset: 1, country: req.body.countryCode, timestamp:'1800-10-23T09:00:00' })
 		.then(function(data) {
 			console.log('artist in location');
 			console.log(data.body);

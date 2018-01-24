@@ -46,8 +46,8 @@ var codeAddress = function () {
   
   google.maps.event.addListener(map, 'click', function(e) {
     updateMarkerPosition(e.latLng);
-    geocodePosition(marker.getPosition());
     marker.setPosition(e.latLng);
+    geocodePosition(marker.getPosition());
   map.panTo(marker.getPosition()); 
   }); 
   
@@ -106,7 +106,11 @@ function loopThroughPlaylist(data) {
   let songHTML='';
   for(let i = 0; i < data.length; i++) {
     //console.log(data[i].uri);
-    songHTML += `<div data-artist-name='${data[i].artists[0].name}' data-album-id='${data[i].id}' class='album'>albumName: ${data[i].name} artistName: ${data[i].artists[0].name}</div><br>`
+    songHTML += 
+    //try to make the button toggle between 'play' and 'pause' (play with the button tags)
+      `<div data-artist-name='${data[i].artists[0].name}' data-album-id='${data[i].id}' class='album'>albumName: ${data[i].name} <br> artistName: ${data[i].artists[0].name}</div>
+      <button>Pause</button>
+      <button>Play</button><br><br>`
 
   }
   $('.results').html(songHTML);
