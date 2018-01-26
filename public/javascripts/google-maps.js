@@ -108,9 +108,13 @@ function loopThroughPlaylist(data) {
     //console.log(data[i].uri);
     songHTML += 
     //try to make the button toggle between 'play' and 'pause' (play with the button tags)
-      `<div data-artist-name='${data[i].artists[0].name}' data-album-id='${data[i].id}' class='album'>albumName: ${data[i].name} <br> artistName: ${data[i].artists[0].name}</div>
-      <button>Pause</button>
-      <button>Play</button><br><br>`
+      `
+      <img src="${data[i].images[0].url}" alt="Album Artwork" class="albumArt"></img><br>  
+      Artist: ${data[i].artists[0].name}<br>
+      Album: ${data[i].name} <br>
+      <div data-artist-name='${data[i].artists[0].name}' data-album-id='${data[i].id}' class='album'><button>Play/Pause</button></div><br><br>
+        
+      `
 
   }
   $('.results').html(songHTML);

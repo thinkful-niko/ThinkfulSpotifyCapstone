@@ -38,7 +38,7 @@ router.post('/artist', function(req, res, next) {
 
 router.get('/', function(req, res, next) {
 	// Get Elvis' albums
-		res.render('index', { title: 'Find an Artist',testText: 'Hello there', albums:[] });
+		res.render('index', { title: 'Discover Top Artists by Country', description: 'Input a country name in Searchbox', albums:[] });
 	})
 
 router.post('/tracks', function(req, res, next) {
@@ -58,9 +58,9 @@ spotifyApi.searchTracks(`artist:${req.body.artist}`)
 //Retrieve Featured Playlists
 router.post('/location', function(req, res, next) {
 	console.log(req.body);
-	spotifyApi.getNewReleases({ limit : 20, offset: 1, country: req.body.countryCode, timestamp:'1800-10-23T09:00:00' })
+	spotifyApi.getNewReleases({ limit : 5, offset: 1, country: req.body.countryCode, timestamp:'2014-10-23T09:00:00' })
 		.then(function(data) {
-			console.log('artist in location');
+			console.log(`artists from ${req.body.countryCode}`);
 			console.log(data.body);
 			//console.log(data.body.playlists.items[0]);
 			//console.log(data.body.playlists.items[0].name);
@@ -68,6 +68,7 @@ router.post('/location', function(req, res, next) {
 			return res.status(200).json({featurePlaylist:data.body});
 		}, function(err) {
 			console.log("Something went wrong!", err);
+			console.log("There is no music for this country");
 	});
 });
 

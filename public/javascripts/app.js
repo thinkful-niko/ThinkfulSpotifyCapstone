@@ -23,5 +23,11 @@ $('body').on('click', '.album', function (e) {
     	});   
     });
 
+//track and log country codes based on the user's Input history
+//create an array
+//on submission, pass country string and push to array
+//display array items in a list on webpage
+
+
 
 //<iframe src="https://open.spotify.com/embed?uri=${data[i].uri}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe><br>`;
