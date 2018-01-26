@@ -9,7 +9,7 @@ $('body').on('click', '.album', function (e) {
 
 	let data = {
 	    album:album,
-	     artist: artist
+	    artist: artist
 	}
 	console.log(data);
 
@@ -22,6 +22,24 @@ $('body').on('click', '.album', function (e) {
 			audioObject.play(); //play the song!!!
     	});   
     });
+
+$('.results').on('click', '.js-play-toggle', function(){
+
+
+
+	/*let playing = false;
+	if(playing === false){
+		playing = true;
+		audioObject.play();
+	}else{
+		playing = false;
+		audioObject.pause();
+		console.log('toggle is set to true');
+	}
+
+	console.log('play button clicked');*/
+
+});
 
 //track and log country codes based on the user's Input history
 //create an array
