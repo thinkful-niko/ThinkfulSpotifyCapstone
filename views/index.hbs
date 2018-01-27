@@ -7,8 +7,8 @@
 	<div id="mapCanvas"></div>
 </div>
 <div id="panel" class="clearfix">
-    <input id="city_country" type="textbox" value="Dublin, Ireland">
-    <input type="button" value="Geocode" onclick="codeAddress()">
+    <input id="city_country" type="textbox" value="Dublin, Ireland" class="searchBox">
+    <input type="button" value="Geocode" onclick="codeAddress()" class="submitListener">
 </div>  
 <div id="infoPanel">
   <!--<b>Marker status:</b>-->
@@ -20,9 +20,8 @@
 </div>
 
 <h2 class="clearfix">Re-discover Previous Countries</h2>
-<div>
-  <div id="address"></div>
-</div>
+<div id="address"></div>
+<div id="previouslySearched"></div>
 
 <h2 class="clearfix">Top Artists for selectedCountry</h2>
 <div class="clearfix results"></div>  <!--Need to apply a clearfix to clear the map marker info-->

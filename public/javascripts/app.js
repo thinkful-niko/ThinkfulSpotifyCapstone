@@ -6,9 +6,10 @@ $('body').on('click', '.album', function (e) {
 
 	let album = $(this).data('album-id')
 	let artist = $(this).data('artist-name')
+	let preview = $(this).data('')
 
 	let data = {
-	    album:album,
+	    album: album,
 	    artist: artist
 	}
 	console.log(data);
@@ -23,9 +24,9 @@ $('body').on('click', '.album', function (e) {
     	});   
     });
 
+
+//functionality to toggle the play button
 $('.results').on('click', '.js-play-toggle', function(){
-
-
 
 	/*let playing = false;
 	if(playing === false){
@@ -36,16 +37,37 @@ $('.results').on('click', '.js-play-toggle', function(){
 		audioObject.pause();
 		console.log('toggle is set to true');
 	}
-
 	console.log('play button clicked');*/
 
 });
 
-//track and log country codes based on the user's Input history
-//create an array
-//on submission, pass country string and push to array
-//display array items in a list on webpage
+//functionality to list previously searched countries
+	//track and log country codes based on the user's Input history
+	//create an array
+	//on submission, pass country string and push to array
+	//display array items in a list on webpage
 
+$(function(){
+	const recentSearch = [];
 
+    $(".submitListener").click(function(event) {
+	    event.preventDefault();
+	    
+	    const userInput = $(".searchBox").val();
+	    let historyHTML= '';
+	    historyHTML += `${recentSearch}`;
+	    
+	    //clear the text from input box
+	    $(".searchBox").val('');
+	    
+	    //add item to list
+	    console.log(`add ${userInput} to list`);
+	    console.log('Submit Event Listener is working!');
+	    recentSearch.push(userInput);
+	    console.log(recentSearch);
+
+  	});
+ 
+});
 
 //<iframe src="https://open.spotify.com/embed?uri=${data[i].uri}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe><br>`;
