@@ -7,9 +7,11 @@
 	<div id="mapCanvas"></div>
 </div>
 <div id="panel" class="clearfix">
-    <input id="city_country" type="textbox" value="Dublin, Ireland" class="searchBox">
-    <input type="button" value="Geocode" onclick="codeAddress()" class="submitListener">
-</div>  
+	<form> <!--Change this into a form -->
+    	<input id="city_country" type="textbox" value="Dublin, Ireland" class="searchBox" name="countrySearch">
+    	<input type="button" value="Search" onclick="codeAddress()" class="submitListener" name="countrySearch">
+	</form>  
+</div>
 <div id="infoPanel">
   <!--<b>Marker status:</b>-->
   <div id="markerStatus"><i><!--Click and drag the marker.--></i></div>

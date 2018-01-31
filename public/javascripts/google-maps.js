@@ -45,7 +45,7 @@ var codeAddress = function () {
   });
   
   google.maps.event.addListener(map, 'click', function(e) {
-    updateMarkerPosition(e.latLng);
+   updateMarkerPosition(e.latLng);
     marker.setPosition(e.latLng);
     geocodePosition(marker.getPosition());
   map.panTo(marker.getPosition()); 
@@ -113,7 +113,7 @@ function loopThroughPlaylist(data) {
       Track: <br>
       Artist: ${data[i].artists[0].name}<br>
       Album: ${data[i].name} <br>
-      <div data-artist-name='${data[i].artists[0].name}' data-album-id='${data[i].id}' class='album js-play-toggle submitListener'><button>Play/Pause</button></div><br><br>
+      <div data-artist-name='${data[i].artists[0].name}' data-album-id='${data[i].id}' class='album js-play-toggle'><button>Play/Pause</button></div><br><br>
         
       `
 

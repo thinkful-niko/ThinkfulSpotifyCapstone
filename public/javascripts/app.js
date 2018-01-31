@@ -16,7 +16,7 @@ $('body').on('click', '.album', function (e) {
 
 	$.post("/tracks", data, function(result){
         	console.log(result);
-        	//S$('.results').html(result.data);
+        	//$('.results').html(result.data);
         	//loopThroughVid(result.data);
         	audioObject.pause();
         	audioObject = new Audio(result.data[0].preview_url); //create a new audio object using the data returned from Spotify.com
@@ -50,12 +50,12 @@ $('.results').on('click', '.js-play-toggle', function(){
 $(function(){
 	const recentSearch = [];
 
-    $(".submitListener").click(function(event) {
+    /*$("form").submit(function(event) {
 	    event.preventDefault();
 	    
 	    const userInput = $(".searchBox").val();
 	    let historyHTML= '';
-	    historyHTML += `${recentSearch}`;
+	    
 	    
 	    //clear the text from input box
 	    $(".searchBox").val('');
@@ -65,8 +65,8 @@ $(function(){
 	    console.log('Submit Event Listener is working!');
 	    recentSearch.push(userInput);
 	    console.log(recentSearch);
-
-  	});
+	    historyHTML += `${recentSearch}`;
+  	});*/
  
 });
 
