@@ -2,10 +2,10 @@ var geocoder;
 var map;
 var marker;
 
-var codeAddress = function () {
+var codeAddress = function (city='Atlanta') {
     geocoder = new google.maps.Geocoder();
   
-  var address = document.getElementById('city_country').value;
+  var address = document.getElementById('city_country').value || city;
   geocoder.geocode( { 'address': address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       map = new google.maps.Map(document.getElementById('mapCanvas'), {
@@ -45,10 +45,12 @@ var codeAddress = function () {
   });
   
   google.maps.event.addListener(map, 'click', function(e) {
+   $('form').submit();
    updateMarkerPosition(e.latLng);
     marker.setPosition(e.latLng);
     geocodePosition(marker.getPosition());
   map.panTo(marker.getPosition()); 
+
   }); 
   
     } else {

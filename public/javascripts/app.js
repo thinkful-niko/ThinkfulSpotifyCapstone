@@ -50,8 +50,9 @@ $('.results').on('click', '.js-play-toggle', function(){
 $(function(){
 	const recentSearch = [];
 
-    /*$("form").submit(function(event) {
+    $("form").submit(function(event) {
 	    event.preventDefault();
+	    codeAddress();
 	    
 	    const userInput = $(".searchBox").val();
 	    let historyHTML= '';
@@ -65,9 +66,16 @@ $(function(){
 	    console.log('Submit Event Listener is working!');
 	    recentSearch.push(userInput);
 	    console.log(recentSearch);
-	    historyHTML += `${recentSearch}`;
-  	});*/
+	    for(let i=0; i < recentSearch.length; i++){
+	    	historyHTML += `<div class="recentCountry">${recentSearch[i]}</div>`;
+	    }
+	    $('#previouslySearched').html(historyHTML);
+  	});
  
+ 	$('#previouslySearched').on('click', '.recentCountry', function(){
+ 		console.log($(this).text());
+ 		codeAddress($(this).text());
+ 	});
 });
 
 //<iframe src="https://open.spotify.com/embed?uri=${data[i].uri}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe><br>`;
