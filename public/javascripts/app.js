@@ -40,7 +40,7 @@ $('.results').on('click', '.js-play-toggle', function(){
 	console.log('play button clicked');*/
 
 });
-
+//functionality to display alert if no preview is available to play
 $(function(){
 	$('button').click('click', '.js-play-toggle', function(){
 		if(audioObject == null){
