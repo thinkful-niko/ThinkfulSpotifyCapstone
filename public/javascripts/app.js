@@ -41,6 +41,16 @@ $('.results').on('click', '.js-play-toggle', function(){
 
 });
 
+$(function(){
+	$('button').click('click', '.js-play-toggle', function(){
+		if(audioObject == null){
+			console.log('there is no preview to play!!');
+		}else{
+			console.log('We have something to play!');
+		}
+	});
+});
+
 //functionality to list previously searched countries
 	//track and log country codes based on the user's Input history
 	//create an array
