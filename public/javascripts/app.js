@@ -54,7 +54,7 @@ $(function(){
 	    event.preventDefault();
 	    codeAddress();
 	    
-	    const userInput = $(".searchBox").val();
+	    const userInput = $(".searchBox").val().toUpperCase();
 	    let historyHTML= '';
 	    
 	    
@@ -71,10 +71,31 @@ $(function(){
 	    }
 	    $('#previouslySearched').html(historyHTML);
   	});
+
+  	$('.js-button').click(function(event) {
+	    event.preventDefault();
+	    codeAddress();
+	    
+	    const userInput = $(".searchBox").val().toUpperCase();
+	    let historyHTML= '';
+	    
+	    //clear the text from input box
+	    $(".searchBox").val('');
+	    
+	    //add item to list
+	    console.log(`add ${userInput} to list`);
+	    console.log('Click Event Listener is working!');
+	    recentSearch.push(userInput);
+	    console.log(recentSearch);
+	    for(let i=0; i < recentSearch.length; i++){
+	    	historyHTML += `<div class="recentCountry">${recentSearch[i]}</div>`;
+	    }
+	    $('#previouslySearched').html(historyHTML);
+  	});
  
  	$('#previouslySearched').on('click', '.recentCountry', function(){
  		console.log($(this).text());
- 		codeAddress($(this).text());
+ 		codeAddress($(this).text()).toUpperCase();
  	});
 });
 
