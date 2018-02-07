@@ -9,8 +9,8 @@
 <div id="panel" class="clearfix">
   <h3 id="test">Instructions: {{description}}</h3>
 	<form> <!--Change this into a form -->
-    	<input id="city_country" type="textbox" value="Dublin, Ireland" class="searchBox" name="countrySearch">
-    	<input type="button" value="Search" onclick="codeAddress()" class="submitListener js-button" name="countrySearch">
+    	<input id="city_country" type="textbox" value="United States" class="searchBox" name="countrySearch">
+    	<input type="submit" value="Search" onclick="codeAddress()" class="submitListener js-button" name="countrySearch">
 	</form>  
 </div>
 <div id="infoPanel">
@@ -22,13 +22,14 @@
   <!--<div id="address"></div>-->
 </div>
 
-<h2 class="clearfix">Re-discover Previous Countries</h2>
-<div id="address"></div>
-<div id="previouslySearched"></div>
-
-<h2 class="clearfix">Top Artists for selectedCountry</h2>
-<div class="clearfix results"></div>  <!--Need to apply a clearfix to clear the map marker info-->
-
-
-
+<div class="col-6 sec-title">
+  <h2 class="clearfix">Top Artists for selectedCountry</h2>
+  <div class="clearfix results"></div>
+</div>
+<hr>
+<div class="col-6 sec-title">
+  <h2 class="clearfix">Re-discover Previous Countries</h2>
+  <div id="address"></div>
+  <div id="previouslySearched"></div>
+</div>
 
