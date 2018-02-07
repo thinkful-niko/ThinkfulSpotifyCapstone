@@ -1,6 +1,13 @@
 var audioObject = new Audio();
+let play = false;
 
 $('body').on('click', '.album', function (e) { 
+	play = !play;
+	//functionality to toggle between play/pause and pausing previous song when playing another song
+	/*if(!play){
+		audioObject.pause();
+		return;
+	} */
 	console.log(this);
 	console.log($(this).data('album-id'))
 
@@ -14,13 +21,30 @@ $('body').on('click', '.album', function (e) {
 	}
 	console.log(data);
 
-	$.post("/tracks", data, function(result){
+	$.post("/tracks", data, function(result, status, xhr){
+			console.log(result, status, xhr);
         	console.log(result);
         	//$('.results').html(result.data);
         	//loopThroughVid(result.data);
-        	audioObject.pause();
-        	audioObject = new Audio(result.data[0].preview_url); //create a new audio object using the data returned from Spotify.com
-			audioObject.play(); //play the song!!!
+        	//create a for loop function here
+        	for(let i = 0; i < result.data.length; i++){
+        		console.log(result.data[i].preview_url);
+				if(result.data[i].preview_url !== null){
+					console.log('We have something to play!');
+	        		audioObject.pause();
+	        		audioObject = new Audio(result.data[i].preview_url); //create a new audio object using the data returned from Spotify.com
+					audioObject.play(); //play the song!!!
+
+					return;
+				}
+        	}
+    		console.log('There is no preview to play!!');
+    		var bar = new $.peekABar({
+    			html: 'Override all, puny humans!',
+    			backgroundColor: 'white',
+				autohide: true
+			});
+			bar.show();
     	});   
     });
 
@@ -40,6 +64,8 @@ $('.results').on('click', '.js-play-toggle', function(){
 	console.log('play button clicked');*/
 
 });
+//functionality to display alert if no preview is available
+
 
 //functionality to list previously searched countries
 	//track and log country codes based on the user's Input history
@@ -72,7 +98,7 @@ $(function(){
 	    $('#previouslySearched').html(historyHTML);
   	});
 
-  	$('.js-button').click(function(event) {
+  	/*$('.js-button').click(function(event) {
 	    event.preventDefault();
 	    codeAddress();
 	    
@@ -91,7 +117,7 @@ $(function(){
 	    	historyHTML += `<div class="recentCountry">${recentSearch[i]}</div>`;
 	    }
 	    $('#previouslySearched').html(historyHTML);
-  	});
+  	});*/
  
  	$('#previouslySearched').on('click', '.recentCountry', function(){
  		console.log($(this).text());
