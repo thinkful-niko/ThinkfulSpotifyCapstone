@@ -2,12 +2,13 @@
   box-sizing: border-box;
 }
 
+.hide {
+	display: none;
+}
+
 /*Media Queries*/
 	/*Mobile Viewport*/
 .map-wrapper {
-  /*display: block;
-  width: 90%;
-  margin: auto;*/
   display: none;
 }
 
@@ -31,7 +32,7 @@ input[type="textbox"]{
 input[type="submit"]{ 
 	padding: 5px 10px;
 	line-height: 25px;
-	width: 40%;
+	width: 35%;
 	font-size: 14px; 
 }
 
@@ -50,11 +51,21 @@ hr {
   padding: 10px;
 }
 
+.row {
+  max-width: 1000px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
 .col-6 {
   width: 100%;
   padding-top: 20px;
   color: blue
   border: 2px solid green;
+  float: left;
+  padding-left: 1.04166666%;
+  padding-right: 1.04166666%;
 }
 
 /*.song-detail {
@@ -67,15 +78,44 @@ hr {
 	#mapCanvas {
 		display: none;
 	}
+
+	hr {
+		display: block;
+		clear: both;
+	}
+
+	#previouslySearched {
+		display: block;
+		width: 100%;
+	}
 }
 
 
 /*Tablet Viewport*/
 @media screen and (min-width: 375px) {
+	h2 {
+		width: 100%;
+	}
+
+	.container {
+		display: flex;
+		justify-content: space-around;
+	}
+
 	.sec-title {
 		display: block;
 		text-align: left;
 	}
+
+	hr {
+		display: none;
+	}
+
+	input[type="submit"]{ 
+	line-height: 35px;
+	width: 35%;
+	font-size: 18px; 
+}
 
 	.map-wrapper {
 		display: block;
@@ -90,6 +130,22 @@ hr {
   		height: 400px;
   		margin: auto;
   		border: 4px dashed red;
+	}
+
+	.col-6 {
+		width: 50%;
+		padding: 15px;
+	}
+
+	input[type="textbox"]{ 
+		width: 75%;
+		font-size: 24px; 
+	}
+
+	.play-toggle {
+		line-height: 35px;
+		width: 35%;
+		font-size: 18px; 
 	}
 }
 
@@ -111,6 +167,12 @@ hr {
   		margin: auto;
   		border: 4px dashed blue;
 	}
+
+	.song-detail {
+		font-size: 18px;
+	}
+
+
 }
 
 
