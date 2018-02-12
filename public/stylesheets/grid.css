@@ -48,13 +48,11 @@ hr {
 .albumArt {
   height: 100%;
   width: 100%;
-  padding: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .row {
   max-width: 1000px;
-  padding-left: 20px;
-  padding-right: 20px;
   margin: 0 auto;
 }
 
@@ -64,8 +62,6 @@ hr {
   color: blue
   border: 2px solid green;
   float: left;
-  padding-left: 1.04166666%;
-  padding-right: 1.04166666%;
 }
 
 /*.song-detail {
@@ -73,15 +69,14 @@ hr {
 	text-align: center;
 }*/
 
+hr {
+	display: block;
+	clear: both;
+}
 
-@media screen and (max-width: 374px) {
+@media screen and (max-width: 500px) {
 	#mapCanvas {
 		display: none;
-	}
-
-	hr {
-		display: block;
-		clear: both;
 	}
 
 	#previouslySearched {
@@ -92,7 +87,15 @@ hr {
 
 
 /*Tablet Viewport*/
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 501px) {
+	.row-1 {
+		width: 50%;
+	}
+
+	.row-2 {
+		width: 50%;
+	}
+
 	h2 {
 		width: 100%;
 	}
@@ -133,8 +136,14 @@ hr {
 	}
 
 	.col-6 {
-		width: 50%;
+		width: 100%;
 		padding: 15px;
+	}
+
+	img {
+		/*create a ruleset for max width and height for image*/
+		max-width: 300px;
+		max-height: 300px;
 	}
 
 	input[type="textbox"]{ 
@@ -143,15 +152,24 @@ hr {
 	}
 
 	.play-toggle {
-		line-height: 35px;
-		width: 35%;
-		font-size: 18px; 
+		line-height: 45px;
+		width: 150px;
+		font-size: 18px;
+
 	}
 }
 
 
 /*Desktop Viewport*/
 @media screen and (min-width: 768px) {
+	.row-1 {
+		width: 75%;
+	}
+
+	.row-2 {
+		width: 25%;
+	}
+
 	.map-wrapper {
 		display: block;
 		width: 90%;

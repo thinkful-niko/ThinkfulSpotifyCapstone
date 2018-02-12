@@ -38,7 +38,7 @@ router.post('/artist', function(req, res, next) {
 
 router.get('/', function(req, res, next) {
 	// Get Elvis' albums
-		res.render('index', { title: 'Discover Top Albums by Country', description: 'Input a country name in Searchbox', albums:[] });
+		res.render('index', { title: 'Discover Top Artists by Country', description: 'Input a country in Searchbox', albums:[] });
 	})
 
 router.post('/tracks', function(req, res, next) {
@@ -58,7 +58,7 @@ spotifyApi.searchTracks(`artist:${req.body.artist}`)
 //Retrieve Featured Playlists
 router.post('/location', function(req, res, next) {
 	console.log(req.body);
-	spotifyApi.getNewReleases({ limit : 5, offset: 1, country: req.body.countryCode, timestamp:'2014-10-23T09:00:00' })
+	spotifyApi.getNewReleases({ limit : 6, offset: 1, country: req.body.countryCode, timestamp:'2014-10-23T09:00:00' })
 		.then(function(data) {
 			console.log(`artists from ${req.body.countryCode}`);
 			console.log(data.body);

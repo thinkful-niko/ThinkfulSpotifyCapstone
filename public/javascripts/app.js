@@ -1,15 +1,24 @@
 var audioObject = new Audio();
 let play = false;
+let playingSong = null;
+
 
 $('body').on('click', '.album', function (e) { 
-	play = !play;
+	//play = !play;
+
 	//functionality to toggle between play/pause and pausing previous song when playing another song
-	/*if(!play){
+	if(!play){
 		audioObject.pause();
-		return;
-	} */
+		console.log(playingSong, $(this).data('album-id'));
+		if(playingSong == $(this).data('album-id')){
+			return;
+		}
+	}
+
+
 	console.log(this);
 	console.log($(this).data('album-id'))
+	playingSong = $(this).data('album-id');
 
 	let album = $(this).data('album-id')
 	let artist = $(this).data('artist-name')
@@ -40,9 +49,9 @@ $('body').on('click', '.album', function (e) {
         	}
     		console.log('There is no preview to play!!');
     		var bar = new $.peekABar({
-    			html: 'Override all, puny humans!',
-    			backgroundColor: 'white',
-				autohide: true
+    			html: 'Oh no! There\'s no Music!!!!!',
+    			backgroundColor: 'red',
+				autohide: true,
 			});
 			bar.show();
     	});   
@@ -52,18 +61,20 @@ $('body').on('click', '.album', function (e) {
 //functionality to toggle the play button
 $('.results').on('click', '.js-play-toggle', function(){
 
-	/*let playing = false;
-	if(playing === false){
-		playing = true;
-		audioObject.play();
-	}else{
-		playing = false;
-		audioObject.pause();
-		console.log('toggle is set to true');
-	}
-	console.log('play button clicked');*/
+play = !play;
+console.log(play);
 
 });
+//functionality to display alert if no preview is available to play
+/*$(function(){
+	$('button').click('click', '.js-play-toggle', function(){
+		if(audioObject == null){
+			console.log('there is no preview to play!!');
+		}else{
+			console.log('We have something to play!');
+		}
+	});
+});*/
 //functionality to display alert if no preview is available
 
 
@@ -81,15 +92,19 @@ $(function(){
 	    codeAddress();
 	    
 	    const userInput = $(".searchBox").val().toUpperCase();
+	    let titleDisplay = $(".searchBox").val().toLowerCase();
 	    let historyHTML= '';
-	    
+		let titleRender= '';	    
 	    
 	    //clear the text from input box
 	    $(".searchBox").val('');
-	    
+
+	    //update country in Results header
+	    titleRender += `<h2>Top Artists for <span class="capitalize">${titleDisplay}</span></h2>`;
+	    $('#countryRender').html(titleRender);
+
 	    //add item to list
 	    console.log(`add ${userInput} to list`);
-	    console.log('Submit Event Listener is working!');
 	    recentSearch.push(userInput);
 	    console.log(recentSearch);
 	    for(let i=0; i < recentSearch.length; i++){

@@ -8,7 +8,8 @@ h3, body {
 
 body {
   padding: 10px;
-  background-color: rgb(245, 245, 245);
+  /*background-color: rgb(245, 245, 245);*/
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
 
 a {
@@ -19,6 +20,19 @@ h1 {
   display: block;
   text-align: center;
 }
+
+img {
+  
+}
+
+.center {
+  text-align: center;
+}
+
+.capitalize {
+    text-transform:capitalize;
+}
+
 
 .searchBox {
   text-align: center;
@@ -65,7 +79,8 @@ h1 {
   left: 0;
   right: 0;
   text-align: center;
-  color: red;
+  color: gainsboro;
+  font-family: 'Crimson Text', serif;
 }
 /*# sourceMappingURL=jquery.peekabar.min.css.map */
 
