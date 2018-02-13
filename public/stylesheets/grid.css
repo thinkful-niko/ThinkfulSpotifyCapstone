@@ -56,12 +56,24 @@ hr {
   margin: 0 auto;
 }
 
+.row::before,
+.row::after {
+  display: table;
+  content: '';
+}
+
 .col-6 {
   width: 100%;
   padding-top: 20px;
   color: blue
   border: 2px solid green;
   float: left;
+}
+
+.result-col{
+	float: left;
+    width: 50%;
+    padding: 10px;
 }
 
 /*.song-detail {
