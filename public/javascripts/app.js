@@ -108,9 +108,15 @@ $(function(){
 	    recentSearch.push(userInput);
 	    console.log(recentSearch);
 	    for(let i=0; i < recentSearch.length; i++){
-	    	historyHTML += `<div class="recentCountry">${recentSearch[i]}</div>`;
+
+	    	historyHTML += `<div class="js-recentCountry recentCountry">${recentSearch[i]}</div>`;
 	    }
 	    $('#previouslySearched').html(historyHTML);
+
+	    //NEED HELP!!!! - How do I limit the number of previously searched countries to 5?
+	    /*$('#previouslySearched').slice(0, 2);*/
+
+	    
   	});
 
   	/*$('.js-button').click(function(event) {
@@ -129,12 +135,12 @@ $(function(){
 	    recentSearch.push(userInput);
 	    console.log(recentSearch);
 	    for(let i=0; i < recentSearch.length; i++){
-	    	historyHTML += `<div class="recentCountry">${recentSearch[i]}</div>`;
+	    	historyHTML += `<div class="js-recentCountry">${recentSearch[i]}</div>`;
 	    }
 	    $('#previouslySearched').html(historyHTML);
   	});*/
  
- 	$('#previouslySearched').on('click', '.recentCountry', function(){
+ 	$('#previouslySearched').on('click', '.js-recentCountry', function(){
  		console.log($(this).text());
  		codeAddress($(this).text()).toUpperCase();
  	});

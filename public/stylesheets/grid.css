@@ -17,7 +17,11 @@
 	text-align: center;
 }
 
-#info {
+form{
+	padding-bottom: 10px;
+}
+
+#infoPanel {
 	display: none;
 }
 
@@ -31,9 +35,9 @@ input[type="textbox"]{
 
 input[type="submit"]{ 
 	padding: 5px 10px;
-	line-height: 25px;
+	line-height: 40px;
 	width: 35%;
-	font-size: 14px; 
+	font-size: 18px; 
 }
 
 hr {
@@ -45,10 +49,15 @@ hr {
 	background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
 }
 
+.recentCountry {
+	font-size: 18px;
+	font-weight: bolder;
+}
+
 .albumArt {
   height: 100%;
   width: 100%;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .row {
@@ -64,29 +73,33 @@ hr {
 
 .col-6 {
   width: 100%;
-  padding-top: 20px;
-  color: blue
-  border: 2px solid green;
+  padding: 10px 0;
+  /*border: 2px solid green;*/
   float: left;
 }
 
-.result-col{
-	float: left;
-    width: 50%;
+.result-col {
+    width: 80%;
     padding: 10px;
+    margin: auto;
 }
 
-/*.song-detail {
-	display: block;
+img {
+	min-width: 200px;
+	max-width: 250px;
 	text-align: center;
-}*/
+}
 
 hr {
 	display: block;
 	clear: both;
 }
 
-@media screen and (max-width: 500px) {
+.discover {
+	  border: none;
+}
+
+@media screen and (max-width: 400px) {
 	#mapCanvas {
 		display: none;
 	}
@@ -99,17 +112,25 @@ hr {
 
 
 /*Tablet Viewport*/
-@media screen and (min-width: 501px) {
+@media screen and (min-width: 401px) {
+	.discover {
+	  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	  height: 300px;
+	  background-color: #AABFCD;
+	}
+
 	.row-1 {
-		width: 50%;
+		width: 70%;
 	}
 
 	.row-2 {
-		width: 50%;
+		width: 30%;
 	}
 
 	h2 {
 		width: 100%;
+		padding-bottom: 10px;
+		margin: auto;
 	}
 
 	.container {
@@ -128,28 +149,33 @@ hr {
 
 	input[type="submit"]{ 
 	line-height: 35px;
-	width: 35%;
+	width: 20%;
 	font-size: 18px; 
+	max-width: 600px;
+	min-width: 300px;
 }
 
 	.map-wrapper {
 		display: block;
 		width: 90%;
 		margin: auto;
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+		border: 1px solid black;
 		/*visibility: visible;*/
-		border: 4px dashed yellow;
+		/*border: 4px dashed yellow;*/
 	}
 
 	#mapCanvas {
 		width: 100%;
   		height: 400px;
   		margin: auto;
-  		border: 4px dashed red;
+  		/*border: 4px dashed red;*/
 	}
 
 	.col-6 {
 		width: 100%;
 		padding: 15px;
+		margin: 15px;
 	}
 
 	img {
@@ -160,7 +186,9 @@ hr {
 
 	input[type="textbox"]{ 
 		width: 75%;
-		font-size: 24px; 
+		font-size: 24px;
+		max-width: 900px;
+		min-width: 400px;
 	}
 
 	.play-toggle {
@@ -185,9 +213,11 @@ hr {
 	.map-wrapper {
 		display: block;
 		width: 90%;
+		max-width: 900px;
+		min-width: 400px;
 		margin: auto;
 		/*visibility: visible;*/
-		border: 4px dashed green;
+		/*border: 4px dashed green;*/
 	}
 
 	#mapCanvas {
@@ -195,14 +225,19 @@ hr {
 		width: 100%;
   		height: 600px;
   		margin: auto;
-  		border: 4px dashed blue;
+
+  		/*border: 4px dashed blue;*/
 	}
 
 	.song-detail {
 		font-size: 18px;
 	}
 
-
+	.result-wrapper {
+		/*border: 2px dashed green;*/
+		max-width: 80%;
+		margin: auto;
+	}
 }
 
 

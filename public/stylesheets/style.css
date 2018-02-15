@@ -8,21 +8,32 @@ h3, body {
 
 body {
   padding: 10px;
-  /*background-color: rgb(245, 245, 245);*/
-  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  background-color: #D6E1E8;
+
+  /*background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);*/
 }
 
 a {
   color: #00B7FF;
 }
 
+h1, h3 {
+  color: #7492A6;
+}
+
+h2 {
+  color: #F4F7F9;
+}
+
+
 h1 {
   display: block;
   text-align: center;
 }
 
-img {
-
+.bold {
+  font-weight: 900;
+  font-size: 18px;
 }
 
 .center {
@@ -33,6 +44,10 @@ img {
     text-transform:capitalize;
 }
 
+.result-background {
+  background-color: #AABFCD;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
 
 .searchBox {
   text-align: center;
@@ -113,4 +128,6 @@ img {
 .btn:focus {
   outline: none;
 }
+
+
 

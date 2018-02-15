@@ -113,8 +113,8 @@ function loopThroughPlaylist(data) {
       `
       <div class="song-detail">
         <img src="${data[i].images[0].url}" alt="Album Artwork" class="albumArt"></img><br>  
-        Artist: ${data[i].artists[0].name}<br>
-        Top Album: ${data[i].name} <br>
+        <span class="bold">Artist:</span> ${data[i].artists[0].name}<br>
+        <span class="bold">Top Album:</span> ${data[i].name} <br>
         <div data-artist-name='${data[i].artists[0].name}' data-album-id='${data[i].id}' class='album js-play-toggle'><button class="play-toggle">Play/Pause</button></div><br><br>
       </div>
         
