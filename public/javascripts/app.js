@@ -23,6 +23,7 @@ $('body').on('click', '.album', function (e) {
 	let album = $(this).data('album-id')
 	let artist = $(this).data('artist-name')
 	let preview = $(this).data('')
+	let t = this;
 
 	let data = {
 	    album: album,
@@ -47,6 +48,8 @@ $('body').on('click', '.album', function (e) {
 					return;
 				}
         	}
+        	//experiment with toggling the play value
+        	play = false;
     		console.log('There is no preview to play!!');
     		var bar = new $.peekABar({
     			html: 'Oh no! There\'s no Music!!!!!',
@@ -54,6 +57,8 @@ $('body').on('click', '.album', function (e) {
 				autohide: true,
 			});
 			bar.show();
+			$(t).find('button').remove();
+			window.t = t;
     	});   
     });
 
@@ -145,5 +150,15 @@ $(function(){
  		codeAddress($(this).text()).toUpperCase();
  	});
 });
+
+$(document).ready(function() {
+  $('.results').on('click', '.button', function() {
+    $(this).toggleClass("paused");
+    console.log('Its Toggling!!!');
+  });
+
+
+});
+
 
 //<iframe src="https://open.spotify.com/embed?uri=${data[i].uri}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe><br>`;

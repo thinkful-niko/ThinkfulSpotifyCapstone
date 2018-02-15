@@ -2,7 +2,7 @@ var geocoder;
 var map;
 var marker;
 
-var codeAddress = function (city='Atlanta') {
+var codeAddress = function (city='Spain') {
     geocoder = new google.maps.Geocoder();
   
   var address = document.getElementById('city_country').value || city;
@@ -115,13 +115,25 @@ function loopThroughPlaylist(data) {
         <img src="${data[i].images[0].url}" alt="Album Artwork" class="albumArt"></img><br>  
         <span class="bold">Artist:</span> ${data[i].artists[0].name}<br>
         <span class="bold">Top Album:</span> ${data[i].name} <br>
-        <div data-artist-name='${data[i].artists[0].name}' data-album-id='${data[i].id}' class='album js-play-toggle'><button class="play-toggle">Play/Pause</button></div><br><br>
+        <div data-artist-name='${data[i].artists[0].name}' data-album-id='${data[i].id}' class='album js-play-toggle'><button class="play-toggle button"></button></div>
       </div>
         
       `
 
   }
   $('.results').html(songHTML);
+
+  /*$(document).ready(function() {
+  var btn = $(".button");
+  btn.click(function() {
+    btn.toggleClass("paused");
+    console.log('Its Toggling!!!');
+    return false;
+  });
+});*/
+
+
+
 
   //let audioObject = new Audio(data.tracks.items[0].preview_url); //create a new audio object using the data returned from Spotify.com
   //        audioObject.play(); //play the song!!!

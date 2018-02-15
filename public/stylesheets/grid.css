@@ -8,6 +8,11 @@
 
 /*Media Queries*/
 	/*Mobile Viewport*/
+
+.play-toggle {
+	transform: scale(.4);
+}
+
 .map-wrapper {
   display: none;
 }
@@ -52,6 +57,11 @@ hr {
 .recentCountry {
 	font-size: 18px;
 	font-weight: bolder;
+	padding-left: 20px;
+}
+
+.recentCountry:hover {
+	text-decoration: underline;
 }
 
 .albumArt {
@@ -84,7 +94,7 @@ hr {
     margin: auto;
 }
 
-img {
+img.albumArt {
 	min-width: 200px;
 	max-width: 250px;
 	text-align: center;
@@ -113,6 +123,10 @@ hr {
 
 /*Tablet Viewport*/
 @media screen and (min-width: 401px) {
+	h1 {
+		font-size: 175%;
+	}
+
 	.discover {
 	  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	  height: 300px;
@@ -134,8 +148,7 @@ hr {
 	}
 
 	.container {
-		display: flex;
-		justify-content: space-around;
+		position: relative;
 	}
 
 	.sec-title {
@@ -153,7 +166,7 @@ hr {
 	font-size: 18px; 
 	max-width: 600px;
 	min-width: 300px;
-}
+	}
 
 	.map-wrapper {
 		display: block;
@@ -174,11 +187,11 @@ hr {
 
 	.col-6 {
 		width: 100%;
-		padding: 15px;
-		margin: 15px;
+		/*padding: 15px;
+		margin: 15px;*/
 	}
 
-	img {
+	img.albumArt {
 		/*create a ruleset for max width and height for image*/
 		max-width: 300px;
 		max-height: 300px;
@@ -193,7 +206,6 @@ hr {
 
 	.play-toggle {
 		line-height: 45px;
-		width: 150px;
 		font-size: 18px;
 
 	}
@@ -202,17 +214,26 @@ hr {
 
 /*Desktop Viewport*/
 @media screen and (min-width: 768px) {
+	h1 {
+		font-size: 350%;	
+	}
+
 	.row-1 {
 		width: 75%;
+		position: absolute;
+		top: 50px;
+
 	}
 
 	.row-2 {
-		width: 25%;
+    position: absolute;
+    right: 0px;
+    top: 50px;
+    width: 25%;
 	}
 
 	.map-wrapper {
 		display: block;
-		width: 90%;
 		max-width: 900px;
 		min-width: 400px;
 		margin: auto;
@@ -225,12 +246,12 @@ hr {
 		width: 100%;
   		height: 600px;
   		margin: auto;
-
   		/*border: 4px dashed blue;*/
 	}
 
 	.song-detail {
 		font-size: 18px;
+		padding-bottom: 30px;
 	}
 
 	.result-wrapper {
