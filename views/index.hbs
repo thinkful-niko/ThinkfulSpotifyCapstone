@@ -1,47 +1,46 @@
-<h1>{{title}}</h1>
+<main>
+  <h1>{{title}}</h1>
+   
+  <div class="map-wrapper">
+  	<div id="mapCanvas"></div>
+  </div>
+  <div id="panel" class="clearfix">
+    <h3 id="test" class="center">Instructions: {{description}}</h3>
+  	<form>
+        <label for="city_country">
+      	   <input id="city_country" type="textbox" placeholder="Enter Country" class="searchBox" name="countrySearch">
+        </label><br>
+      	<input type="submit" value="Search" onclick="codeAddress()" class="submitListener js-button btn" name="countrySearch">
+  	</form>  
+  </div>
+  <div id="infoPanel">
+    <!--<b>Marker status:</b>-->
+    <div id="markerStatus"><i><!--Click and drag the marker.--></i></div>
+    <!--<b>Current position:</b>-->
+    <div id="info"></div>
+    <!--<b>Fetched ISO-3166-2 code from Google Maps API:</b>-->
+    <!--<div id="address"></div>-->
+  </div>
 
+  <div class="result-wrapper">
+    <div class="container shadow">
+      <div class="row row-1">
+        <div class="col-6 sec-title result-background">
+          <h2 class="clearfix center" id="countryRender">Top Artists</h2>
+          <!--Create line to describe how to play the music-->
+          <div class="result-col">
+            <div class="clearfix results center"></div>
+          </div>
+        </div>
+      </div>
 
-<!--<div class="artistName"></div>-->
- 
-<div class="map-wrapper">
-	<div id="mapCanvas"></div>
-</div>
-<div id="panel" class="clearfix">
-  <h3 id="test" class="center">Instructions: {{description}}</h3>
-	<form> <!--Change this into a form -->
-    	<input id="city_country" type="textbox" placeholder="Enter Country" class="searchBox" name="countrySearch"><br>
-    	<input type="submit" value="Search" onclick="codeAddress()" class="submitListener js-button btn" name="countrySearch">
-	</form>  
-</div>
-<div id="infoPanel">
-  <!--<b>Marker status:</b>-->
-  <div id="markerStatus"><i><!--Click and drag the marker.--></i></div>
-  <!--<b>Current position:</b>-->
-  <div id="info"></div>
-  <!--<b>Fetched ISO-3166-2 code from Google Maps API:</b>-->
-  <!--<div id="address"></div>-->
-</div>
-
-<div class="result-wrapper">
-  <div class="container shadow">
-    <div class="row row-1">
-      <div class="col-6 sec-title result-background">
-        <h2 class="clearfix center" id="countryRender">Top Artists</h2>
-        <!--Create line to describe how to play the music-->
-        <div class="result-col">
-          <div class="clearfix results center"></div>
+      <div class="row row-2 discover">
+        <div class="col-6 sec-title result-background">
+          <h2 class="clearfix center">Re-discover</h2>
+          <div id="address" class="hide"></div>
+          <div id="previouslySearched"></div>
         </div>
       </div>
     </div>
-
-    <hr>
-
-    <div class="row row-2 discover">
-      <div class="col-6 sec-title">
-        <h2 class="clearfix center" id='title-color'>Re-discover</h2>
-        <div id="address" class="hide"></div>
-        <div id="previouslySearched"></div>
-      </div>
-    </div>
   </div>
-</div>
+</main>
