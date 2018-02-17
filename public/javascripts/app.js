@@ -65,29 +65,9 @@ $('body').on('click', '.album', function (e) {
 
 //functionality to toggle the play button
 $('.results').on('click', '.js-play-toggle', function(){
-
-play = !play;
-console.log(play);
-
+	play = !play;
+	console.log(play);
 });
-//functionality to display alert if no preview is available to play
-/*$(function(){
-	$('button').click('click', '.js-play-toggle', function(){
-		if(audioObject == null){
-			console.log('there is no preview to play!!');
-		}else{
-			console.log('We have something to play!');
-		}
-	});
-});*/
-//functionality to display alert if no preview is available
-
-
-//functionality to list previously searched countries
-	//track and log country codes based on the user's Input history
-	//create an array
-	//on submission, pass country string and push to array
-	//display array items in a list on webpage
 
 $(function(){
 	const recentSearch = [];
@@ -117,33 +97,7 @@ $(function(){
 	    	historyHTML += `<div class="js-recentCountry recentCountry">${recentSearch[i]}</div>`;
 	    }
 	    $('#previouslySearched').html(historyHTML);
-
-	    //NEED HELP!!!! - How do I limit the number of previously searched countries to 5?
-	    /*$('#previouslySearched').slice(0, 2);*/
-
-	    
   	});
-
-  	/*$('.js-button').click(function(event) {
-	    event.preventDefault();
-	    codeAddress();
-	    
-	    const userInput = $(".searchBox").val().toUpperCase();
-	    let historyHTML= '';
-	    
-	    //clear the text from input box
-	    $(".searchBox").val('');
-	    
-	    //add item to list
-	    console.log(`add ${userInput} to list`);
-	    console.log('Click Event Listener is working!');
-	    recentSearch.push(userInput);
-	    console.log(recentSearch);
-	    for(let i=0; i < recentSearch.length; i++){
-	    	historyHTML += `<div class="js-recentCountry">${recentSearch[i]}</div>`;
-	    }
-	    $('#previouslySearched').html(historyHTML);
-  	});*/
  
  	$('#previouslySearched').on('click', '.js-recentCountry', function(){
  		console.log($(this).text());
@@ -159,6 +113,3 @@ $(document).ready(function() {
 
 
 });
-
-
-//<iframe src="https://open.spotify.com/embed?uri=${data[i].uri}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe><br>`;

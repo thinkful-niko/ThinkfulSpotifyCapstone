@@ -38,7 +38,7 @@ router.post('/artist', function(req, res, next) {
 
 router.get('/', function(req, res, next) {
 	// Get Elvis' albums
-		res.render('index', { title: 'Discover Top Artists by Country', description: 'Input a country in Searchbox', albums:[] });
+		res.render('index', { title: 'Discover Top Artists by Country', description: 'Search for a country in input box (below) or click on a country on map (above)', albums:[] });
 	})
 
 router.post('/tracks', function(req, res, next) {
@@ -47,7 +47,6 @@ console.log(req.body);
 console.log("penguins");
 spotifyApi.searchTracks(`artist:${req.body.artist}`)
   .then(function(data) {
-  	console.log('hellotest');
     console.log('Search tracks by "Love" in the artist name', data.body.tracks.items[0]);
     return res.status(200).json({data:data.body.tracks.items});
   }, function(err) {

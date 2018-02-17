@@ -5,7 +5,7 @@
   	<div id="mapCanvas"></div>
   </div>
   <div id="panel" class="clearfix">
-    <h3 id="test" class="center">Instructions: {{description}}</h3>
+    <h3 id="test" class="center"><span class="instructions">Instructions:</span> {{description}}</h3>
   	<form>
         <label for="city_country">
       	   <input id="city_country" type="textbox" placeholder="Enter Country" class="searchBox" name="countrySearch">
@@ -27,14 +27,13 @@
       <div class="row row-1">
         <div class="col-6 sec-title result-background">
           <h2 class="clearfix center" id="countryRender">Top Artists</h2>
-          <!--Create line to describe how to play the music-->
           <div class="result-col">
             <div class="clearfix results center"></div>
           </div>
         </div>
       </div>
 
-      <div class="row row-2 discover">
+      <div class="row row-2">
         <div class="col-6 sec-title result-background">
           <h2 class="clearfix center">Re-discover</h2>
           <div id="address" class="hide"></div>

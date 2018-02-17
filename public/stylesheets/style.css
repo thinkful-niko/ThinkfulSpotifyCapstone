@@ -9,26 +9,23 @@ h3, body {
 body {
   padding: 10px;
   background-color: #D6E1E8;
-
-  /*background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);*/
 }
 
 a {
   color: #00B7FF;
 }
 
-h1, h3 {
-  color: #7492A6;
+h1 {
+  display: block;
+  text-align: center;
 }
 
 h2 {
   color: #F4F7F9;
 }
 
-
-h1 {
-  display: block;
-  text-align: center;
+h1, h3 {
+  color: #7492A6;
 }
 
 .bold {
@@ -36,12 +33,16 @@ h1 {
   font-size: 18px;
 }
 
+.instructions {
+  font-size: 24px;
+}
+
 .center {
   text-align: center;
 }
 
 .capitalize {
-    text-transform:capitalize;
+    text-transform: capitalize;
 }
 
 .result-background {
@@ -53,38 +54,18 @@ h1 {
   text-align: center;
 }
 
-#infoPanel {
-  float: left;
-  margin-left: 10px;
-}
-
-#infoPanel div {
-  margin-bottom: 5px;
-}
-
 .clearfix {
   clear: both;
 }
 
 .float-left {
   float: left;
-  color: blue;
 }
 
 .map-wrapper {
   display: block;
   width: 90%;
   margin: auto;
-}
-
-.border {
-  border: 2px dashed green;
-}
-
-.box {
-  display: block;
-  height: 100px;
-  width: 100px;
 }
 
 .peek-a-bar{
@@ -114,6 +95,19 @@ h1 {
   text-decoration: none;
 }
 
+.button {
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  width: 0;
+  height: 74px;
+  border-color: transparent transparent transparent #202020;
+  transition: 100ms all ease;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 37px 0 37px 60px;
+}
+
 .btn:hover {
   background: #3cb0fd;
   background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
@@ -128,18 +122,6 @@ h1 {
   outline: none;
 }
 
-.button {
-  border: 0;
-  background: transparent;
-  box-sizing: border-box;
-  width: 0;
-  height: 74px;
-  border-color: transparent transparent transparent #202020;
-  transition: 100ms all ease;
-  cursor: pointer;
-  border-style: solid;
-  border-width: 37px 0 37px 60px;
-}
 .button.paused {
   border-style: double;
   border-width: 0px 0 0px 60px;
@@ -148,5 +130,11 @@ h1 {
   border-color: transparent transparent transparent #404040;
 }
 
+#infoPanel {
+  float: left;
+  margin-left: 10px;
+}
 
-
+#infoPanel div {
+  margin-bottom: 5px;
+}

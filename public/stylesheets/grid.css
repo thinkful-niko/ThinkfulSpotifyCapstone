@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+ 	box-sizing: border-box;
 }
 
 .hide {
@@ -8,26 +8,8 @@
 
 /*Media Queries*/
 	/*Mobile Viewport*/
-
-.play-toggle {
-	transform: scale(.4);
-}
-
-.map-wrapper {
-  display: none;
-}
-
-.sec-title, form {
-	display: block;
-	text-align: center;
-}
-
 form{
 	padding-bottom: 10px;
-}
-
-#infoPanel {
-	display: none;
 }
 
 input[type="textbox"]{ 
@@ -45,47 +27,19 @@ input[type="submit"]{
 	font-size: 18px; 
 }
 
-/*hr {
-	border: 0; 
-	height: 1px; 
-	background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-	background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-	background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-	background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
-}*/
-
-.recentCountry {
-	font-size: 22px;
-	font-weight: bolder;
+.play-toggle {
+	transform: scale(.4);
 }
 
-.recentCountry:hover {
-	text-decoration: underline;
-}
-
-.albumArt {
-  height: 100%;
-  width: 100%;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-.row {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.row::before,
-.row::after {
-  display: table;
-  content: '';
+.map-wrapper {
+ 	display: none;
 }
 
 .col-6 {
-  width: 100%;
-  padding: 10px 0;
-  /*border: 2px solid green;*/
-  float: left;
-  margin-bottom: 15px;
+	width: 100%;
+	padding: 10px 0;
+	float: left;
+	margin-bottom: 15px;
 }
 
 .result-col {
@@ -94,22 +48,53 @@ input[type="submit"]{
     margin: auto;
 }
 
+.sec-title, form {
+	display: block;
+	text-align: center;
+}
+
+.recentCountry {
+	font-size: 22px;
+	font-weight: bolder;
+}
+
+.albumArt {
+	height: 100%;
+	width: 100%;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.row {
+ 	max-width: 1000px;
+ 	margin: 0 auto;
+}
+
 img.albumArt {
 	min-width: 200px;
 	max-width: 250px;
 	text-align: center;
 }
 
-/*hr {
-	display: block;
-	clear: both;
-}*/
+#infoPanel {
+	display: none;
+}
 
-.discover {
-	  border: none;
+.recentCountry:hover {
+	text-decoration: underline;
+}
+
+.row::before,
+.row::after {
+	display: table;
+	content: '';
 }
 
 @media screen and (max-width: 400px) {
+	h2 {
+		font-size: 36px;
+		margin: 15px 0;
+	}
+
 	#mapCanvas {
 		display: none;
 	}
@@ -118,30 +103,39 @@ img.albumArt {
 		display: block;
 		width: 100%;
 	}
-
-	h2 {
-		font-size: 36px;
-		margin: 15px 0;
-	}
 }
-
 
 /*Tablet Viewport*/
 @media screen and (min-width: 401px) {
-	.recentCountry {
-		padding-left: 20px;
-		font-size: 18px;
-	}
-
 	h1 {
 		font-size: 175%;
 	}
 
-	/*.discover {*/
-	  /*box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);*/
-	  /*height: 300px;*/
-	  /*background-color: #AABFCD;
-	}*/
+	h2 {
+		width: 100%;
+		padding-bottom: 10px;
+		margin: auto;
+	}
+
+	input[type="textbox"]{ 
+		width: 75%;
+		font-size: 24px;
+		max-width: 900px;
+		min-width: 400px;
+	}
+
+	input[type="submit"]{ 
+		line-height: 35px;
+		width: 20%;
+		font-size: 18px; 
+		max-width: 600px;
+		min-width: 300px;
+	}
+
+	.recentCountry {
+		padding-left: 20px;
+		font-size: 18px;
+	}
 
 	.row-1 {
 		width: 70%;
@@ -149,12 +143,6 @@ img.albumArt {
 
 	.row-2 {
 		width: 30%;
-	}
-
-	h2 {
-		width: 100%;
-		padding-bottom: 10px;
-		margin: auto;
 	}
 
 	.container {
@@ -166,16 +154,10 @@ img.albumArt {
 		text-align: left;
 	}
 
-	/*hr {
-		display: none;
-	}*/
-
-	input[type="submit"]{ 
-	line-height: 35px;
-	width: 20%;
-	font-size: 18px; 
-	max-width: 600px;
-	min-width: 300px;
+	.col-6 {
+		width: 100%;
+		/*padding: 15px;
+		margin: 15px;*/
 	}
 
 	.map-wrapper {
@@ -184,40 +166,23 @@ img.albumArt {
 		margin: auto;
 		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 		border: 1px solid black;
-		/*visibility: visible;*/
-		/*border: 4px dashed yellow;*/
-	}
-
-	#mapCanvas {
-		width: 100%;
-  		height: 400px;
-  		margin: auto;
-  		/*border: 4px dashed red;*/
-	}
-
-	.col-6 {
-		width: 100%;
-		/*padding: 15px;
-		margin: 15px;*/
-	}
-
-	img.albumArt {
-		/*create a ruleset for max width and height for image*/
-		max-width: 300px;
-		max-height: 300px;
-	}
-
-	input[type="textbox"]{ 
-		width: 75%;
-		font-size: 24px;
-		max-width: 900px;
-		min-width: 400px;
 	}
 
 	.play-toggle {
 		line-height: 45px;
 		font-size: 18px;
 
+	}
+
+	img.albumArt {
+		max-width: 300px;
+		max-height: 300px;
+	}
+
+	#mapCanvas {
+		width: 100%;
+  		height: 400px;
+  		margin: auto;
 	}
 }
 
@@ -236,10 +201,10 @@ img.albumArt {
 	}
 
 	.row-2 {
-    position: absolute;
-    right: -10px;
-    top: 50px;
-    width: 25%;
+	    position: absolute;
+	    right: -10px;
+	    top: 50px;
+	    width: 25%;
 	}
 
 	.map-wrapper {
@@ -247,16 +212,6 @@ img.albumArt {
 		max-width: 900px;
 		min-width: 400px;
 		margin: auto;
-		/*visibility: visible;*/
-		/*border: 4px dashed green;*/
-	}
-
-	#mapCanvas {
-		visibility: visible;
-		width: 100%;
-  		height: 600px;
-  		margin: auto;
-  		/*border: 4px dashed blue;*/
 	}
 
 	.song-detail {
@@ -265,9 +220,15 @@ img.albumArt {
 	}
 
 	.result-wrapper {
-		/*border: 2px dashed green;*/
 		max-width: 80%;
 		margin: auto;
+	}
+
+	#mapCanvas {
+		visibility: visible;
+		width: 100%;
+  		height: 600px;
+  		margin: auto;
 	}
 }
 
